@@ -1,0 +1,27 @@
+{
+    "version": "https://jsonfeed.org/version/1",
+    "title": "prueba de web 01",
+    "description": "",
+    "home_page_url": "https://github.com/javallega/2asirAFH2526/trabajos",
+    "feed_url": "https://github.com/javallega/2asirAFH2526/trabajos/feed.json",
+    "user_comment": "",
+    "author": {
+        "name": "pepe"
+    },
+    "items": [
+        {
+            "id": "https://github.com/javallega/2asirAFH2526/trabajos/titulito.html",
+            "url": "https://github.com/javallega/2asirAFH2526/trabajos/titulito.html",
+            "title": "titulito",
+            "summary": "Es es mi primer articulo xcxcv 😎",
+            "content_html": "<p>Es es mi primer articulo</p>\n<p>xcxcv</p>\n<p>😎</p>",
+            "author": {
+                "name": "pepe"
+            },
+            "tags": [
+            ],
+            "date_published": "2025-10-08T20:21:13+02:00",
+            "date_modified": "2025-10-08T20:21:55+02:00"
+        }
+    ]
+}

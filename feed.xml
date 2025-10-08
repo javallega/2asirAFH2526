@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/">
+    <title>prueba de web 01</title>
+    <link href="https://github.com/javallega/2asirAFH2526/trabajos/feed.xml" rel="self" />
+    <link href="https://github.com/javallega/2asirAFH2526/trabajos" />
+    <updated>2025-10-08T20:21:55+02:00</updated>
+    <author>
+        <name>pepe</name>
+    </author>
+    <id>https://github.com/javallega/2asirAFH2526/trabajos</id>
+
+    <entry>
+        <title>titulito</title>
+        <author>
+            <name>pepe</name>
+        </author>
+        <link href="https://github.com/javallega/2asirAFH2526/trabajos/titulito.html"/>
+        <id>https://github.com/javallega/2asirAFH2526/trabajos/titulito.html</id>
+
+        <updated>2025-10-08T20:21:13+02:00</updated>
+            <summary>
+                <![CDATA[
+                    Es es mi primer articulo xcxcv 😎
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                <p>Es es mi primer articulo</p>
+<p>xcxcv</p>
+<p>😎</p>
+            ]]>
+        </content>
+    </entry>
+</feed>
