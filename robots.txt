@@ -1,2 +1,3 @@
 User-agent: *
-Disallow: /
+Disallow:
+Sitemap: https://javallega.github.io/2asirAFH2526/trabajos/sitemap.xml
