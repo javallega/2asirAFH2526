@@ -2,19 +2,19 @@
     "version": "https://jsonfeed.org/version/1",
     "title": "Bolsa Analisis Técnico",
     "description": "",
-    "home_page_url": "https://javallega.github.io/2asirAFH2526/trabajos",
-    "feed_url": "https://javallega.github.io/2asirAFH2526/trabajos/feed.json",
+    "home_page_url": "https://javallega.github.io/2asirAFH2526/pepepe",
+    "feed_url": "https://javallega.github.io/2asirAFH2526/pepepe/feed.json",
     "user_comment": "",
     "author": {
         "name": "Jose Antonio Vállega"
     },
     "items": [
         {
-            "id": "https://javallega.github.io/2asirAFH2526/trabajos/post.html",
-            "url": "https://javallega.github.io/2asirAFH2526/trabajos/post.html",
+            "id": "https://javallega.github.io/2asirAFH2526/pepepe/post.html",
+            "url": "https://javallega.github.io/2asirAFH2526/pepepe/post.html",
             "title": "¿Qué es el doble techo?",
             "summary": "El doble techo es una figura muy conocida en el análisis técnico que se produce cuando el precio de un&hellip;",
-            "content_html": "<figure class=\"post__image post__image--center\"><img loading=\"lazy\"  style=\"font-size: inherit; outline: rgba(13, 139, 242, 0.55) solid 3px !important;\" src=\"https://javallega.github.io/2asirAFH2526/trabajos/media/posts/2/ASML.png\" alt=\"\" width=\"539\" height=\"303\" sizes=\"(max-width: 48em) 100vw, 768px\" srcset=\"https://javallega.github.io/2asirAFH2526/trabajos/media/posts/2/responsive/ASML-xs.png 300w ,https://javallega.github.io/2asirAFH2526/trabajos/media/posts/2/responsive/ASML-sm.png 480w ,https://javallega.github.io/2asirAFH2526/trabajos/media/posts/2/responsive/ASML-md.png 768w\"></figure>\n<p>El doble techo es una figura muy conocida en el análisis técnico que se produce cuando<strong> el precio de un activo choca dos veces seguidas con una línea de resistencia.</strong> Generalmente, suele significar que el volumen no tiene fuerza suficiente para superar un determinado nivel y que empieza una tendencia regresiva a la baja.</p>\n<p>Un doble techo está constituido por <strong>dos crestas sucesivas establecidas al mismo nivel y separadas por un valle</strong>. Las implicaciones de una figura de este tipo son <strong>bajistas.</strong></p>",
+            "content_html": "<figure class=\"post__image post__image--center\"><img loading=\"lazy\"  style=\"font-size: inherit; outline: rgba(13, 139, 242, 0.55) solid 3px !important;\" src=\"https://javallega.github.io/2asirAFH2526/pepepe/media/posts/2/ASML.png\" alt=\"\" width=\"539\" height=\"303\" sizes=\"(max-width: 48em) 100vw, 768px\" srcset=\"https://javallega.github.io/2asirAFH2526/pepepe/media/posts/2/responsive/ASML-xs.png 300w ,https://javallega.github.io/2asirAFH2526/pepepe/media/posts/2/responsive/ASML-sm.png 480w ,https://javallega.github.io/2asirAFH2526/pepepe/media/posts/2/responsive/ASML-md.png 768w\"></figure>\n<p>El doble techo es una figura muy conocida en el análisis técnico que se produce cuando<strong> el precio de un activo choca dos veces seguidas con una línea de resistencia.</strong> Generalmente, suele significar que el volumen no tiene fuerza suficiente para superar un determinado nivel y que empieza una tendencia regresiva a la baja.</p>\n<p>Un doble techo está constituido por <strong>dos crestas sucesivas establecidas al mismo nivel y separadas por un valle</strong>. Las implicaciones de una figura de este tipo son <strong>bajistas.</strong></p>",
             "author": {
                 "name": "Jose Antonio Vállega"
             },
