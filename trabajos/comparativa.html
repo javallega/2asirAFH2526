@@ -505,6 +505,7 @@
             <button class="index-btn" data-target="#problemas">3. Problemas planteados</button>
             <button class="index-btn" data-target="#coste">4. Coste de generación</button>
             <button class="index-btn" data-target="#graficas">5. Gráficas comparativas</button>
+            <button class="index-btn" data-target="#conclusion">6. Conclusión</button>
           </div>
         </div>
       </div>
@@ -578,8 +579,8 @@
             Secuencia matemática
           </div>
           <div class="question-body">
-            Se define una secuencia \((a_1, a_2, …)\) con \(a_1 = 1\) y \(a_n = n - a_{a_{n-1}}\) para \(n &gt; 1\).
-            Se pide el valor de \(a_{2025}\).
+            Se define una secuencia \((a_1, a_2, …)\) con \((a_1 = 1)\) y \((a_n = n - a_{a_{n-1}})\) para \((n > 1)\).
+            Se pide el valor de \((a_{2025})\).
           </div>
           <div class="question-answer">
             <strong>Respuesta esperada:</strong> 1350.
@@ -855,6 +856,31 @@
         </section>
       </div>
     </section>
+
+    <!-- 6. Conclusión -->
+    <section id="conclusion" class="section-card">
+      <div class="section-inner">
+        <div class="section-header">
+          <h2>6. Conclusión</h2>
+          <span class="section-pill">Resumen de resultados</span>
+        </div>
+        <p>
+          Qwen3 4B, creada por Alibaba Cloud y con 4 mil millones de parámetros, se rompe en todas las preguntas; está destinada para chatbots y no es capaz de responder bien a estos acertijos de prueba.
+        </p>
+        <p>
+          Granite 4H Tiny, creada por IBM, es capaz de contestar las preguntas más simples pero falla bastante en las respuestas, aunque sí contesta.
+        </p>
+        <p>
+          Gemma 3n 4B, creada por Google IA, es la que mejor se ha comportado y ha respondido a las preguntas planteadas; es una IA entrenada para uso general.
+        </p>
+        <p>
+          Allenai/olmocr 2 7B, creada por el Allen Institute for AI (AI2), a pesar de tener más parámetros que los anteriores, no ha podido responder mejor.
+        </p>
+        <p>
+          En rendimiento, ha resultado bastante más rápida la tarjeta Nvidia del equipo con Windows que el Mac mini de Apple.
+        </p>
+      </div>
+    </section>
   </div>
 
   <script>
@@ -879,7 +905,7 @@
             "Qwen 3-4B": [37.91, 50.08, 37.87, 36.34, 38.01, 37.39],
             "Granite-4H-tiny7B": [43.48, 42.21, 42.21, 43.54, 42.11, 43.27],
             "Gema-3ne4b": [16.68, 18.62, 18.61, 18.86, 18.96, 18.79],
-            "Alleani-olmo": [104.3, 135.07, 165.6, 102.54, 99.2, 96.07]
+            "Alleani-olmo": [70.84, 37.7, 77.4, 71.1, 78.27, 90.57]
           }
         },
         ttft: {
@@ -888,7 +914,7 @@
             "Qwen 3-4B": [1.35, 1.28, 1.33, 0.96, 1.03, 0.56],
             "Granite-4H-tiny7B": [0.38, 1.74, 0.33, 0.21, 0.23, 0.2],
             "Gema-3ne4b": [1.02, 2.22, 0.56, 0.76, 0.45, 0.47],
-            "Alleani-olmo": [1.04, 0.98, 1.27, 0.17, 0.09, 0.32]
+            "Alleani-olmo": [1.04, 0.98, 1.27, 0.17, 0.09, 0.32] 
           }
         }
       },
@@ -899,7 +925,7 @@
             "Qwen 3-4B": [104, 135.07, 106.56, 102.54, 99.2, 96.07],
             "Granite-4H-tiny7B": [67.69, 57.8, 70.23, 74.24, 70.7, 71.26],
             "Gema-3ne4b": [42.69, 72.08, 72.26, 40.68, 39.67, 41.05],
-            "Alleani-olmo": [70.84, 37.7, 77.4, 71.1, 78.27, 90.57]
+            "Alleani-olmo": [104.3, 135.07, 165.6, 102.54, 99.2, 96.07]
           }
         },
         ttft: {
