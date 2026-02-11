@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuantización LLM | Documentación</title>
+    
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2280%22>📉</text></svg>">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #7c3aed; /* Púrpura para diferenciar esta sección */
+            --bg: #f8fafc;
+            --text: #0f172a;
+            --card-bg: #ffffff;
+            --border: #e2e8f0;
+            --success: #10b981;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background: linear-gradient(135deg, #4c1d95 0%, #6d28d9 100%);
+            color: white;
+            padding: 5rem 2rem 6rem;
+            text-align: center;
+        }
+
+        header h1 { margin: 0; font-size: 2.8rem; font-weight: 600; }
+        header p { opacity: 0.8; margin-top: 1rem; font-size: 1.1rem; }
+
+        .nav-sticky {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+            padding: 1rem 0;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: var(--text);
+            background: var(--card-bg);
+            padding: 0.6rem 1.2rem;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            border: 1px solid var(--border);
+            transition: all 0.2s ease;
+        }
+
+        .nav-link:hover {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 2rem auto 5rem;
+            padding: 0 1rem;
+        }
+
+        section {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 3rem;
+            margin-bottom: 4rem;
+            box-shadow: 0 4px 25px rgba(0, 0, 0, 0.03);
+            border: 1px solid var(--border);
+        }
+
+        h2 { font-size: 1.8rem; color: var(--primary); margin-top: 0; margin-bottom: 1.5rem; }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 1.5rem 0;
+        }
+
+        .stat-card {
+            padding: 1.5rem;
+            border-radius: 12px;
+            background: #f1f5f9;
+            text-align: center;
+            border: 1px solid var(--border);
+        }
+
+        .stat-value { display: block; font-size: 1.5rem; font-weight: 700; color: var(--text); }
+        .stat-label { font-size: 0.85rem; color: #64748b; text-transform: uppercase; }
+
+        .image-box {
+            margin: 2rem 0;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border: 1px solid var(--border);
+        }
+
+        .image-box img { width: 100%; display: block; }
+
+        .top-link {
+            display: inline-flex;
+            align-items: center;
+            margin-top: 2rem;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        footer { text-align: center; padding: 4rem 2rem; background: #f1f5f9; color: #64748b; }
+    </style>
+</head>
+<body id="top">
+
+<header>
+    <h1>📉 Cuantización de Modelos</h1>
+    <p>Optimización de peso y rendimiento del LLM</p>
+</header>
+
+<div class="nav-sticky">
+    <a href="#entorno" class="nav-link">1. Entorno</a>
+    <a href="#modelo" class="nav-link">2. Modelo Completo</a>
+    <a href="#proceso" class="nav-link">3. Cuantización</a>
+    <a href="#comparativa" class="nav-link">4. Comparativa</a>
+    <a href="#parametros" class="nav-link">5. Parámetros</a>
+</div>
+
+<div class="container">
+
+    <section id="entorno">
+        <h2>01. Instalación del Entorno</h2>
+        <p>Preparación de las librerías necesarias para realizar la cuantización del modelo.</p>
+        <div class="image-box">
+            <img src="images/cu1.png" alt="Instalación del entorno">
+        </div>
+        <div class="image-box">
+            <img src="images/cu2.png" alt="Instalación del entorno">
+        </div>
+        <a href="#top" class="top-link">↑ Volver al inicio</a>
+    </section>
+
+    <section id="modelo">
+        <h2>02. Instalación del Modelo Completo</h2>
+        <p>Descarga del modelo original con un peso aproximado de <strong>7.5 GB</strong>.</p>
+        <div class="image-box">
+            <img src="images/cu3.png" alt="Modelo completo">
+        </div>
+        <a href="#top" class="top-link">↑ Volver al inicio</a>
+    </section>
+
+    <section id="proceso">
+        <h2>03. Proceso de Cuantización</h2>
+        <p>Ejecución de los comandos para reducir la precisión de los pesos y optimizar el modelo.</p>
+        <div class="image-box">
+            <img src="images/cu4.png" alt="Proceso de cuantización">
+        </div>
+        <div class="image-box">
+            <img src="images/cu5.png" alt="Proceso de cuantización">
+        </div>
+        <a href="#top" class="top-link">↑ Volver al inicio</a>
+    </section>
+
+    <section id="comparativa">
+        <h2>04. Comparativa de Peso</h2>
+        <p>Resultados de la reducción de tamaño tras el proceso[cite: 31]:</p>
+        <div class="stats-grid">
+            <div class="stat-card">
+                <span class="stat-label">Antes</span>
+                <span class="stat-value">7.64 GB [cite: 28]</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-label" style="color: var(--success);">Después</span>
+                <span class="stat-value" style="color: var(--success);">2.39 GB [cite: 30]</span>
+            </div>
+        </div>
+        <div class="image-box">
+            <img src="images/cu6.png" alt="Comparación de archivos">
+        </div>
+        <a href="#top" class="top-link">↑ Volver al inicio</a>
+    </section>
+
+    <section id="parametros">
+        <h2>05. Análisis de Parámetros</h2>
+        <p>Comparación detallada de los parámetros del modelo antes [cite: 32] y después [cite: 33] de la cuantización.</p>
+        <div class="image-box">
+            <img src="images/cu7.png" alt="Parámetros finales">
+        </div>
+          <div class="image-box">
+            <img src="images/cu8.png" alt="Parámetros finales">
+        </div>
+        <a href="#top" class="top-link">↑ Volver al inicio</a>
+    </section>
+
+</div>
+
+<footer>
+    <p>Práctica de Cuantización &bull; Proyecto LLM 2026</p>
+</footer>
+
+</body>
+</html>

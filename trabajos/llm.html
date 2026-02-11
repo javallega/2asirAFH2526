@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chef-Bot LLM | Documentación Técnica</title>
+    
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2280%22>👨‍🍳</text></svg>">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-hover: #1d4ed8;
+            --bg: #f8fafc;
+            --text: #0f172a;
+            --card-bg: #ffffff;
+            --code-bg: #1e1e1e;
+            --border: #e2e8f0;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: white;
+            padding: 5rem 2rem 6rem;
+            text-align: center;
+        }
+
+        header h1 { margin: 0; font-size: 2.8rem; font-weight: 600; }
+        header p { opacity: 0.8; margin-top: 1rem; font-size: 1.1rem; }
+
+        /* Navegación Principal */
+        .nav-sticky {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+            padding: 1rem 0;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: var(--text);
+            background: var(--card-bg);
+            padding: 0.6rem 1.2rem;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            border: 1px solid var(--border);
+            transition: all 0.2s ease;
+        }
+
+        .nav-link:hover {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+            transform: translateY(-1px);
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 2rem auto 5rem;
+            padding: 0 1rem;
+        }
+
+        section {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 3rem;
+            margin-bottom: 4rem;
+            box-shadow: 0 4px 25px rgba(0, 0, 0, 0.03);
+            border: 1px solid var(--border);
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-top: 0;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .command-block {
+            background: var(--code-bg);
+            color: #7dd3fc;
+            padding: 1.5rem;
+            border-radius: 12px;
+            font-family: 'Fira Code', monospace;
+            font-size: 0.9rem;
+            margin: 1.5rem 0;
+            overflow-x: auto;
+            border-left: 5px solid var(--primary);
+        }
+
+        .image-box {
+            margin: 2rem 0;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border: 1px solid var(--border);
+        }
+
+        .image-box img {
+            width: 100%;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .image-box:hover img { transform: scale(1.02); }
+
+        .top-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            margin-top: 2rem;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .top-link:hover { text-decoration: underline; }
+
+        footer {
+            text-align: center;
+            padding: 4rem 2rem;
+            background: #f1f5f9;
+            color: #64748b;
+        }
+    </style>
+</head>
+<body id="top">
+
+<header>
+    <h1>👨‍🍳 Chef-Bot Project</h1>
+    <p>Guía paso a paso del entrenamiento de LLM Phi-3-mini</p>
+</header>
+
+<div class="nav-sticky">
+    <a href="#setup" class="nav-link">1. Configuración</a>
+    <a href="#data" class="nav-link">2. Entrenamiento</a>
+    <a href="#command" class="nav-link">3. Comando</a>
+    <a href="#merge" class="nav-link">4. Fusión</a>
+    <a href="#gguf" class="nav-link">5. GGUF</a>
+    <a href="#test" class="nav-link">6. Prueba</a>
+</div>
+
+<div class="container">
+
+    <section id="setup">
+        <h2>01. Configuraciones Iniciales</h2>
+        <p>Ajustes base del sistema y selección del modelo Phi-3-mini-4k-instruct como punto de partida.</p>
+        <div class="image-box">
+            <img src="images/llm1.png" alt="Setup inicial">
+        </div>
+        <a href="#top" class="top-link">↑ Volver al inicio</a>
+    </section>
+
+    <section id="data">
+        <h2>02. Archivo de Entrenamiento</h2>
+        <p>Visualización del conjunto de datos procesado para el aprendizaje del bot gastronómico.</p>
+        <div class="image-box">
+            <img src="images/llm2.png" alt="Dataset">
+        </div>
+        <a href="#top" class="top-link">↑ Volver al inicio</a>
+    </section>
+
+    <section id="command">
+        <h2>03. Comando de Entrenamiento</h2>
+        <p>Iniciando el proceso de LoRA con MLX a 1000 iteraciones.</p>
+        <div class="command-block">python -m mlx_lm lora --model microsoft/Phi-3-mini-4k-instruct --train --data ./data --iters 1000 --batch-size 1 --learning-rate 2e-5 --adapter-path ./chef-bot-adapters</div>
+        <div class="image-box">
+            <img src="images/llm3.png" alt="Ejecución entrenamiento">
+        </div>
+        <a href="#top" class="top-link">↑ Volver al inicio</a>
+    </section>
+
+    <section id="merge">
+        <h2>04. Fusión del Modelo (Merge)</h2>
+        <p>Integración de los pesos entrenados (adapters) con el modelo base original.</p>
+        <div class="image-box">
+            <img src="images/llm4.png" alt="Merge de modelo">
+        </div>
+        <a href="#top" class="top-link">↑ Volver al inicio</a>
+    </section>
+
+    <section id="gguf">
+        <h2>05. Conversión a GGUF</h2>
+        <p>Transformación del modelo a un formato eficiente para ejecución en hardware local.</p>
+        <div class="command-block">python llama.cpp/convert_hf_to_gguf.py ./chef-bot-merged --outfile chef-bot-f16.gguf --outtype f16</div>
+        <div class="image-box">
+            <img src="images/llm5.png" alt="Conversión GGUF">
+        </div>
+        <a href="#top" class="top-link">↑ Volver al inicio</a>
+    </section>
+
+    <section id="test">
+        <h2>06. Prueba Final</h2>
+        <p>Validación de resultados: El Chef-Bot respondiendo consultas culinarias con éxito.</p>
+        <div class="image-box">
+            <img src="images/llm6.png" alt="Resultado final">
+        </div>
+        <a href="#top" class="top-link">↑ Volver al inicio</a>
+    </section>
+
+</div>
+
+<footer>
+    <p>Proyecto Chef-Bot &bull; 2026</p>
+    <p style="font-size: 0.7rem; margin-top: 10px;">Documentación optimizada para GitHub Pages</p>
+</footer>
+
+</body>
+</html>
