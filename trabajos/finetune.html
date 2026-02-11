@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gemma 3 Fine Tuning | Documentación</title>
+    
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2280%22>💎</text></svg>">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #4285f4; /* Azul Google Gemma */
+            --bg: #f8fafc;
+            --text: #0f172a;
+            --card-bg: #ffffff;
+            --border: #e2e8f0;
+            --accent: #1a73e8;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background: linear-gradient(135deg, #174ea6 0%, #4285f4 100%);
+            color: white;
+            padding: 5rem 2rem 6rem;
+            text-align: center;
+        }
+
+        header h1 { margin: 0; font-size: 2.8rem; font-weight: 600; }
+        header p { opacity: 0.8; margin-top: 1rem; font-size: 1.1rem; }
+
+        .nav-sticky {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+            padding: 1rem 0;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: var(--text);
+            background: var(--card-bg);
+            padding: 0.6rem 1.2rem;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            border: 1px solid var(--border);
+            transition: all 0.2s ease;
+        }
+
+        .nav-link:hover {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 2rem auto 5rem;
+            padding: 0 1rem;
+        }
+
+        section {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 3rem;
+            margin-bottom: 4rem;
+            box-shadow: 0 4px 25px rgba(0, 0, 0, 0.03);
+            border: 1px solid var(--border);
+        }
+
+        h2 { font-size: 1.8rem; color: var(--primary); margin-top: 0; margin-bottom: 1.5rem; }
+
+        .info-box {
+            background-color: #e8f0fe;
+            border-left: 5px solid var(--primary);
+            padding: 1rem;
+            margin: 1.5rem 0;
+            border-radius: 4px;
+        }
+
+        .image-box {
+            margin: 2rem 0;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border: 1px solid var(--border);
+        }
+
+        .image-box img { width: 100%; display: block; }
+
+        .top-link {
+            display: inline-flex;
+            align-items: center;
+            margin-top: 2rem;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        footer { text-align: center; padding: 4rem 2rem; background: #f1f5f9; color: #64748b; }
+    </style>
+</head>
+<body id="top">
+
+<header>
+    <h1>💎 Fine Tuning: Gemma 3</h1>
+    <p>Entrenamiento especializado del modelo Gemma-3-270m</p>
+</header>
+
+<div class="nav-sticky">
+    <a href="#modelo" class="nav-link">1. Modelo</a>
+    <a href="#dependencias" class="nav-link">2. Instalación</a>
+    <a href="#entrenamiento" class="nav-link">3. Entrenamiento</a>
+    <a href="#evaluacion" class="nav-link">4. Evaluación</a>
+    <a href="#comandos" class="nav-link">5. Comandos</a>
+</div>
+
+<div class="container">
+
+    <section id="modelo">
+        <h2>01. Modelo Base</h2>
+        <p>Para esta práctica utilizamos el modelo de <strong>Gemma 3</strong> disponible en HuggingFace, específicamente la versión <code>unsloth gemma 3 270m</code> en formato GGUF.</p>
+        <div class="info-box">
+            <strong>Repo:</strong> unsloth/gemma-3-270m-it-GGUF
+        </div>
+        <div class="image-box">
+           
+        </div>
+        <a href="#top" class="top-link">↑ Volver al inicio</a>
+    </section>
+
+    <section id="dependencias">
+        <h2>02. Instalación de Dependencias</h2>
+        <p>Configuración del entorno virtual y carga de librerías esenciales (torch, transformers, datasets, peft y accelerate) para el entrenamiento.</p>
+        <div class="image-box">
+            <img src="images/fine1.png" alt="Consola instalación">
+        </div>
+        
+        <a href="#top" class="top-link">↑ Volver al inicio</a>
+    </section>
+
+    <section id="entrenamiento">
+        <h2>03. Proceso de Entrenamiento</h2>
+        <p>El entrenamiento se configuró en <strong>1000 épocas</strong>, estableciendo un <em>checkpoint</em> automático al alcanzar las 500 épocas para asegurar el progreso.</p>
+        <div class="image-box">
+            <img src="images/fine5.png" alt="Logs de entrenamiento">
+        </div>
+        <a href="#top" class="top-link">↑ Volver al inicio</a>
+    </section>
+
+    <section id="evaluacion">
+        <h2>04. Evaluación Pre y Post</h2>
+        <p>Comparativa del comportamiento del modelo antes de ser entrenado frente a las respuestas obtenidas tras el fine tuning especializado.</p>
+        <div class="image-box">
+            <img src="images/fine6.png" alt="Comparativa de respuestas">
+        </div>
+        <div class="image-box">
+            <img src="images/fine7.png" alt="Conversación final">
+        </div>
+        <a href="#top" class="top-link">↑ Volver al inicio</a>
+    </section>
+
+    <section id="comandos">
+        <h2>05. Directorio y archivos.</h2>
+        <p>Organización de los archivos finales en el directorio de trabajo y exportación del modelo afinado.</p>
+        <div class="image-box">
+            <img src="images/fine2.png" alt="Estructura de archivos">
+        </div>
+        <div class="image-box">
+            <img src="images/fine3.png" alt="Estructura de archivos">
+        </div>
+        <div class="image-box">
+            <img src="images/fine4.png" alt="Estructura de archivos">
+        </div>
+        <a href="#top" class="top-link">↑ Volver al inicio</a>
+    </section>
+
+</div>
+
+<footer>
+    <p>Práctica de Fine Tuning &bull; Gemma 3 &bull; 2026</p>
+</footer>
+
+</body>
+</html>
