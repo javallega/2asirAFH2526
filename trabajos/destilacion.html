@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destilación LLM | Documentación Técnica</title>
+    
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2280%22>⚗️</text></svg>">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #06b6d4; /* Cian/Turquesa para Destilación */
+            --bg: #f0f9ff;
+            --text: #0f172a;
+            --card-bg: #ffffff;
+            --border: #e2e8f0;
+            --danger: #ef4444;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background: linear-gradient(135deg, #0891b2 0%, #06b6d4 100%);
+            color: white;
+            padding: 5rem 2rem 6rem;
+            text-align: center;
+        }
+
+        header h1 { margin: 0; font-size: 2.8rem; font-weight: 600; }
+        header p { opacity: 0.8; margin-top: 1rem; font-size: 1.1rem; }
+
+        .nav-sticky {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(240, 249, 255, 0.9);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+            padding: 1rem 0;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: var(--text);
+            background: var(--card-bg);
+            padding: 0.6rem 1.2rem;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            border: 1px solid var(--border);
+            transition: all 0.2s ease;
+        }
+
+        .nav-link:hover {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 2rem auto 5rem;
+            padding: 0 1rem;
+        }
+
+        section {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 3rem;
+            margin-bottom: 4rem;
+            box-shadow: 0 4px 25px rgba(0, 0, 0, 0.03);
+            border: 1px solid var(--border);
+        }
+
+        h2 { font-size: 1.8rem; color: var(--primary); margin-top: 0; margin-bottom: 1.5rem; }
+
+        .error-box {
+            background-color: #fef2f2;
+            border-left: 5px solid var(--danger);
+            padding: 1.2rem;
+            margin: 1.5rem 0;
+            border-radius: 4px;
+            font-size: 0.95rem;
+        }
+
+        .image-box {
+            margin: 2rem 0;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border: 1px solid var(--border);
+        }
+
+        .image-box img { width: 100%; display: block; }
+
+        .top-link {
+            display: inline-flex;
+            align-items: center;
+            margin-top: 2rem;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        footer { text-align: center; padding: 4rem 2rem; background: #e0f2fe; color: #0369a1; }
+    </style>
+</head>
+<body id="top">
+
+<header>
+    <h1>⚗️ Destilación de Modelos</h1>
+    <p>Transferencia de conocimiento de un modelo maestro a uno alumno</p>
+</header>
+
+<div class="nav-sticky">
+    <a href="#entorno" class="nav-link">1. Entorno</a>
+    <a href="#verificar" class="nav-link">2. Script Verificación</a>
+    <a href="#entrenar" class="nav-link">3. Script Destilación</a>
+    <a href="#proceso" class="nav-link">4. Ejecución</a>
+    <a href="#falla" class="nav-link">5. Errores Finales</a>
+</div>
+
+<div class="container">
+
+    <section id="entorno">
+        <h2>01. Creación del Entorno</h2>
+        <p>Configuración del espacio de trabajo instalando las dependencias críticas: <code>transformers</code> y <code>torch</code>.</p>
+        <div class="image-box">
+            <img src="images/desti1.png" alt="Instalación de librerías">
+        </div>
+        <a href="#top" class="top-link">↑ Volver al inicio</a>
+    </section>
+
+    <section id="verificar">
+        <h2>02. Script de Verificación</h2>
+        <p>Creación del archivo <code>verificar_destilacion.py</code> para comprobar la precisión del modelo destilado final.</p>
+        <div class="image-box">
+            <img src="images/desti2.png" alt="Script de verificación">
+        </div>
+        <a href="#top" class="top-link">↑ Volver al inicio</a>
+    </section>
+
+    <section id="entrenar">
+        <h2>03. Script de Destilación</h2>
+        <p>Desarrollo del código <code>entrenar_destilacion.py</code> definiendo el modelo maestro (Teacher) y el modelo alumno (Student).</p>
+        <div class="image-box">
+            <img src="images/desti3.png" alt="Script de destilación">
+        </div>
+        <a href="#top" class="top-link">↑ Volver al inicio</a>
+    </section>
+
+    <section id="proceso">
+        <h2>04. Proceso de Destilación</h2>
+        <p>Inicio de la transferencia de conocimiento. Se observan los primeros logs de carga y errores de configuración iniciales.</p>
+        <div class="error-box">
+            <strong>Nota:</strong> Debido a la complejidad computacional y la falta de tiempo, el proceso no pudo completarse satisfactoriamente.
+        </div>
+        <div class="image-box">
+            <img src="images/desti4.png" alt="Logs de ejecución">
+        </div>
+        <a href="#top" class="top-link">↑ Volver al inicio</a>
+    </section>
+
+    <section id="falla">
+        <h2>05. Verificación de Errores</h2>
+        <p>Al intentar verificar el modelo sin haber concluido la destilación, el sistema arroja errores de carga de repositorio y archivos inexistentes.</p>
+        <div class="image-box">
+            <img src="images/desti5.png" alt="Error de verificación">
+        </div>
+        <a href="#top" class="top-link">↑ Volver al inicio</a>
+    </section>
+
+</div>
+
+<footer>
+    <p>Proyecto Destilación LLM &bull; 2026</p>
+</footer>
+
+</body>
+</html>
